@@ -19,7 +19,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'chat-app-pre'}),
     AppRoutingModule
   ],
   providers: [],
