@@ -4,14 +4,14 @@ import { ParallaxComponent } from "./components/parallax/parallax.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
-  { path: 'home', component: ParallaxComponent },
+  { path: '', component: ParallaxComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
   //   data: { title: 'Heroes List' }
   // },
   { path: '',
-    redirectTo: '/home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }

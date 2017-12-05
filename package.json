@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "serve:ssr": "node dist/server.js",
+    "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "ng": "ng",
     "prestart": "ng build --prod && ngc",
     "start": "ts-node src/server.ts",
@@ -23,8 +27,11 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/platform-server": "^4.4.6",
     "@angular/router": "^4.2.4",
+    "@nguniversal/express-engine": "^1.0.0-beta.3",
+    "@nguniversal/module-map-ngfactory-loader": "^1.0.0-beta.3",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
+    "ts-loader": "^3.2.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
